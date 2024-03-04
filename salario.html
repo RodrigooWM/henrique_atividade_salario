@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: rgb(186, 186, 243);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+
+        }   
+        div{
+                background-color: white;
+                margin: 20pt;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <h1>Calculo de valor a receber</h1>
+        <!--ESTAGIÁRIO-->
+    <fieldset>
+
+        <legend>Cálculo do salário</legend>
+
+        <label for="dias">Dias trabalhados:</label>
+            <input id="dias" type="number" placeholder="Total de dias"/>
+        
+        <label for="vendas">Total em vendas: </label>
+            <input id="vendas" type="text" placeholder="Ignorar esse campo"/>
+         
+        <button id="calcular" onclick="calcular()">Calcular Estagiário</button>
+        <button id="calcular1" onclick="calcular1()">Calcular Vendedor</button>
+        <div id="res">Aqui vai a resposta</div>
+
+        <p>Obs.: Considere que o estagiário recebe R$30,00 por dia trabalhado, independente do valor vendido.</p>
+
+
+    </fieldset>
+
+        <!--VENDEDOR -->
+
+    </body>
+
+    <script type="text/javascript">
+        
+        function calcular(){
+            var s1 = document.getElementById("dias").value;
+            var s2 = document.getElementById("vendas").value;
+                
+            var s3 = (s1)*Number(30);
+            
+            window.document.getElementById("res").innerText=`O estagiário recebe R$${s3} por ter trabalhado ${s1} dias`
+        }
+        function calcular1()
+        {            
+            var s1 = document.getElementById("dias").value;
+            var s2 = document.getElementById("vendas").value;
+                
+            
+            var s3 = (s2*1.10)+(600);
+            window.document.getElementById("res").innerText=`O vendedor recebe R$${s3} por ter trabalhado igual a um corno`        
+    }
+
+        
+            
+    </script>
+
+    
+</html>

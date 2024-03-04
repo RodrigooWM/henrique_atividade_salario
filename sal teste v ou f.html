@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(186, 186, 243);
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: medium;
+        }   
+        div{
+                background-color: white;
+                margin: 20pt;
+                text-align: center;
+            }
+    </style>
+</head>
+<body>
+    <h1>Calculo de valor a receber</h1>
+        <!--ESTAGIÁRIO-->
+    <fieldset>
+        <legend>Cálculo do salário</legend>
+        <input id="ve" type="text" placeholder="v ou e" maxlength="1">
+        <input type="button" value="Click Me" onclick="teste()"/>
+        <label for="dias">Dias trabalhados:</label>
+            <input id="dias" type="number" placeholder="Total de dias"/>        
+        <label for="vendas">Total em vendas: </label>
+            <input id="vendas" type="text" placeholder="Ignorar esse campo"/>      
+        <div id="res">Aqui vai a resposta</div>
+
+        <p>Obs.: Considere que o estagiário recebe R$30,00 por dia trabalhado, e o vendedor recebe R$600 + 10%.</p>
+    </fieldset>
+        <!--VENDEDOR -->
+    </body>
+    <script type="text/javascript">          
+        function teste(){
+            var s1 = document.getElementById("dias").value;
+            var s2 = document.getElementById("vendas").value;
+            var voue = document.getElementById("ve").value;
+                if (voue == "v")
+                {var s3 = (s2*1.10)+(600);
+                    window.document.getElementById("res").innerText=`O vendedor recebe R$${s3}.`
+                }
+                else if (voue == "e"){
+                var s3 = (s1)*Number(30);
+                window.document.getElementById("res").innerText=`O estagiário recebe R$${s3} por ter trabalhado {s1} dias.`
+            }       
+                else {
+                window.document.getElementById("res").innerText= "Você não é estagiário, nem vendedor."   
+                }           
+        }            
+    </script>   
+</html>
